@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+    by: Alex Childers
+    last modified: 2019/03/17
+
+    you can run this using the URL:
+	http://nrs-projects.humboldt.edu/~abc66/cs328/hw6/custom-plsql.html
+
+-->
+
+<head>
+    <title> Loving Care Pet Boarding </title>
+    <meta charset="utf-8" />
+
+    <link href="http://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
+          type="text/css" rel="stylesheet" />
+		  
+	<link href="custom.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="header" >
+		<h1> Loving Care Pet Boarding </h1> 
+		<p> Alex Childers <br />
+			CS 328
+		</p>
+	</div>
+	
+	<form action="https://mynoise.net/" method="post">
+		<fieldset>
+			<legend> Delete a volunteer </legend>
+			<fieldset>
+				<legend> Volunteer information </legend>
+				
+				<div id="vol_info">
+					<label for="volunteer"> Volunteer ID: </label>
+					<select id="volunteer" name="vol_id" >
+						<option value="300020"> 300020 - Kelley </option>
+						<option value="300022"> 300022 - Henderson </option>					
+						<option value="300024"> 300024 - Thorne </option>
+						<option value="300026"> 300026 - Powell </option>
+						<option value="300028"> 300028 - Li </option>
+						<option value="300030"> 300030 - Daniel </option>
+						<option value="300032"> 300032 - Wicks </option>
+						<option value="300034"> 300034 - Mills </option>
+						<option value="300036"> 300036 - Needham </option>
+						<option value="300038"> 300038 - Strong </option>
+					</select>
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend> Oracle authentication </legend>
+				
+				<div class="login">
+			
+					<label for="username"> Username: </label>
+					<input type="text" name="user" required="required" 
+						id="username" />
+
+					<label for="passwd"> Password: </label>
+					<input type="password" name="pass" id="passwd" />
+			
+				</div>
+			</fieldset>
+			
+			<div class="sub_button">
+				<input type="submit" value="Submit" />
+			</div>
+		</fieldset>
+	</form>
+
+    <hr />
+
+    <p>
+        Validate by pasting .xhtml copy's URL into<br />
+        <a href="https://html5.validator.nu/">
+            https://html5.validator.nu/
+        </a>
+    </p>
+
+    <p>
+        <a href=
+           "http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss"
+                 alt="Valid CSS3!" height="31" width="88" />
+        </a>
+    </p>
+
+</body>
+</html>

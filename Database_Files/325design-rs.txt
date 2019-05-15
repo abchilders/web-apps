@@ -1,0 +1,84 @@
+Alex Childers
+CS 325 - Fall 2018
+Last modified: December 6, 2018
+
+owner(OWNER_ID, first_name, last_name)
+
+owner_phone_num(OWNER_ID, PHONE_NUMBER)
+	foreign key (owner_id) references owner
+
+owner_email_addr(OWNER_ID, EMAIL)
+	foreign key (owner_id) references owner
+
+pet(PET_ID, pet_name, sex, is_spayed_neutered, birthday, pet_type, owner_id)
+	foreign key (owner_id) references owner 
+
+pet_vaccine_received(PET_ID, VACCINE_NAME, date_received) 
+	foreign key (pet_id) references pet
+
+pet_medication_needed(PET_ID, MEDICATION_NAME, dosage)
+	foreign key (pet_id) references pet
+
+pet_diet_restriction(PET_ID, DIET_NEED)
+	foreign key (pet_id) references pet 
+
+cat(PET_ID)
+	foreign key (pet_id) references pet
+
+dog(PET_ID, pet_size)
+	foreign key (pet_id) references pet 
+
+worker(WORKER_ID, worker_type, first_name, last_name)
+
+worker_phone_num(WORKER_ID, PHONE_NUMBER)
+	foreign key (worker_id) references worker
+
+worker_email_addr(WORKER_ID, EMAIL)
+	foreign key (worker_id) references worker 
+
+employee(WORKER_ID, job_title, salary, start_date)
+	foreign key (worker_id) references worker 
+
+employee_formal_qualifications(WORKER_ID, TRAINING)
+	foreign key (worker_id) references employee
+
+volunteer(WORKER_ID)
+	foreign key (worker_id) references worker
+
+volunteer_handling_permissions(WORKER_ID, PET_MAY_HANDLE)
+	foreign key (worker_id) references volunteer 
+
+service(SECTION_ID, service_type)
+
+worker_providing_service(WORKER_ID, SERVICE_SECT_ID)
+	foreign key (worker_id) references worker, 
+	foreign key (service_sect_id) references service(section_id)
+
+class(SECTION_ID, class_name, full_cost)
+	foreign key (section_id) references service 
+
+pet_permitted_in_class(SECTION_ID, PET)
+	foreign key (section_id) references class
+
+class_session_date(SECTION_ID, DATE_OF_OCCURRENCE)
+	foreign key(section_id) references class
+
+class_enrollment(ENROLL_NUM, owner_id, section_id, date_enrolled, pet_id)
+	foreign key (owner_id) references owner,
+	foreign key (section_id) references class,
+	foreign key (pet_id) references pet 
+
+boarding(SECTION_ID, boarding_category, half_day_cost, full_day_cost)
+	foreign key (section_id) references service 
+
+boarding_enrollment(ENROLL_NUM, pet_id, section_id, date_enrolled, start_date, end_date)
+	foreign key (pet_id) references pet,
+	foreign key (section_id) references boarding 
+
+doggy_daycare(SECTION_ID, daycare_category, half_day_cost, full_day_cost)
+	foreign key (section_id) references service 
+
+daycare_enrollment(ENROLL_NUM, pet_id, section_id, date_of_daycare, date_enrolled, 
+	start_time, end_time)
+	foreign key (pet_id) references dog,
+	foreign key (section_id) references doggy_daycare 

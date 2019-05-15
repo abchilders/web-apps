@@ -1,0 +1,11 @@
+Alex Childers
+Last modified: 2019/04/28
+
+I will try to use client-side JavaScript to validate user input for quantity of
+books to be sold. For instance, I can (carefully) use Javascript to display the 
+quantity of books on hand as a placeholder so that the user knows how many 
+books can be sold at most. I might also implement an onclick function that 
+prevents the user from going to the next stage until the quantity that they 
+input is within range, maybe even going so far as to automatically correct 
+negative number quantities to 0, or quantities that are too big to the number 
+of books on hand. 

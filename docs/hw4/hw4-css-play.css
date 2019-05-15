@@ -1,0 +1,26 @@
+/* Alex Childers
+   CS 328 - Homework 4 - Problem 5
+   Last modified: 2019/02/24
+*/
+
+fieldset
+{
+	background-color: #e3f1fc;
+	font-variant: small-caps; 
+	border-color: black; 
+}
+
+legend
+{
+	color: #800020; 
+	background-color: rgb(207, 233, 252); 
+	font-size: 2em; 
+	font-weight: bold; 
+}
+
+h1, p
+{
+	color: green; 
+	font-family: "Helvetica", "Arial", sans-serif; 
+	font-size: 1.5em; 
+}

@@ -1,0 +1,177 @@
+/*  Alex Childers
+	Last modified: 2019/05/10
+*/
+
+/* Rules are listed in alphabetical order.
+*/
+
+/* color theme:
+	white: #ffffff
+	light blue: #b3efff
+	bright purple: #9120ff
+	medium green: #297c4e
+	dark green: #17462c
+	black: #000000
+	
+	use this tool for color-accessibility:
+	https://toolness.github.io/accessible-color-matrix/
+*/
+
+/* importing fonts */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans');
+
+
+body
+{
+	background-color: #ffffff;
+	font-family: "Open Sans", Geneva, sans-serif; 
+	padding-top: 7em; 
+}
+
+caption
+{
+	padding: 1em; 
+}
+
+div.login
+{
+	display: grid; 
+	grid-template-columns: 25% 75%; 
+	grid-auto-rows: minmax(2em, auto); 
+}
+
+div.sub_button
+{
+	margin: 1em; 
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center; 
+	width: 30%; 
+}
+
+h1
+{
+	float: left; 
+	font-family: "IBM Plex Sans", Helvetica, sans-serif; 
+	font-weight: bolder; 
+	width: 50%; 
+}
+
+h2, p
+{
+	padding: 0.5em; 
+}
+
+.header
+{
+	background-color: #17462c;
+	color: #ffffff; 
+	left: 0; 
+	margin: 0; 
+	position: fixed;
+	right: 0; 
+	top: 0;
+	width: 100%; 
+}
+
+.header h1
+{
+	padding-left: 0.5em;
+}
+
+.header h2, .header p
+{
+	text-align: right; 
+}
+
+fieldset
+{
+	padding: 1em; 
+	margin: 1em; 
+}
+
+fieldset *
+{
+	margin: 0.5em; 
+}
+
+form
+{
+	margin-left: auto; 
+	margin-right: auto;	
+	width: 80%; 
+}
+
+input[type="submit"]
+{
+	font-weight: bold; 
+}
+
+label[for="password"]
+{
+	grid-column: 1;
+	grid-row: 2; 
+	text-align: right; 
+}
+
+label[for="volunteer"]
+{
+	grid-column: 1; 
+	grid-row: 1; 
+	text-align: right; 
+}
+
+label[for="username"]
+{
+	grid-column: 1;
+	grid-row: 1; 
+	text-align: right; 
+}
+
+legend
+{
+	background-color: #9120ff;
+	border: 0.1em solid black; 
+	color: white;
+	padding: 0.3em; 
+}
+
+#password
+{
+	grid-column: 2; 
+	grid-row: 2; 
+}
+
+table, td, th
+{
+	border: .1em solid black; 
+	border-collapse: collapse; 
+	margin-left: auto; 
+	margin-right: auto; 
+	padding: 0.3em; 
+	width: 50%; 
+}
+
+td.numeric
+{
+	text-align: right; 
+}
+
+#username
+{
+	grid-column: 2; 
+	grid-row: 1; 
+}
+
+#vol_info
+{
+	display: grid; 
+	grid-template-columns: 25% 75%; 
+	grid-auto-rows: minmax(2em, auto); 
+}
+
+#volunteer
+{
+	grid-column: 2; 
+	grid-row: 1; 
+}

@@ -1,0 +1,13 @@
+Alex Childers
+Last modified: 2019/05/10
+
+The JavaScript I've implemented affects the way a user updates a pet's name. 
+In update_pet.php, the page contains a dropdown menu of pet IDs and a 
+text field. When the user selects a certain pet ID, the text field's placeholder
+becomes that pet's old name, and the user may type a new name over that 
+placeholder.
+
+I did this in pet_info_query.js by querying a pet's info in pet_info_query.php, 
+building an XML representation of that pet's information, and then using this 
+XML query to place that pet's name into the placeholder attribute of an 
+input type="text" element, retrieved by ID in javascript. 

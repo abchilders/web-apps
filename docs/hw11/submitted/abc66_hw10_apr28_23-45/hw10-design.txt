@@ -1,0 +1,17 @@
+Alex Childers
+Last modified: 2019/04/28
+
+Web design guidelines from Chapter 7 to remember: 
+1.) Be consistent-- don't vary the names of actions or locations of common 
+    options across pages on your website. 
+2.) Make your website keyboard-only compatible.
+3.) Fonts should be large enough to read comfortably- body text shouldn't be 
+    less than 10pt. 
+
+Web design guidelines from "Web Design and Usability" to remember:
+1.) Place your name and logo on every page, and make the logo a link to the 
+    home page. 
+2.) Use hypertext to structure content space into a starting page that provides
+    an overview and several secondary pages that each focus on a specific
+    topic. 
+3.) Test your design with real users. 

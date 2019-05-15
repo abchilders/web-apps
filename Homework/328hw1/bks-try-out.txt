@@ -1,0 +1,68 @@
+
+by Alex Childers
+
+=================
+Problem 3 part a
+=================
+
+PUB_NAME                       PUB_STATE                                        
+------------------------------ ---------                                        
+Addison-Wesley                 MA                                               
+Benjamin/Cummings              CA                                               
+Irwin                          IL                                               
+MacMillan                      NJ                                               
+McGraw-Hill                    NY                                               
+Merrill                        OH                                               
+PWS                            MA                                               
+Prentice Hall                  NJ                                               
+Science Research Associates    CA                                               
+
+9 rows selected.
+
+=================
+Problem 3 part b
+=================
+
+TITLE_PRICE TITLE_NAME                                                          
+----------- -----------------------------------                                 
+     $49.50 Computer Science, An Overview                                       
+     $37.95 Data Base Management                                                
+     $34.95 Computers and Data Processing                                       
+     $29.95 BASIC: A Structured Approach                                        
+     $14.95 Case Book for Data Base Management                                  
+
+=================
+Problem 3 part c
+=================
+
+PUB_NAME                         # TITLES AVG PRICE                             
+------------------------------ ---------- ---------                             
+Science Research Associates             1    $28.95                             
+Irwin                                   1    $31.50                             
+Benjamin/Cummings                       5    $33.46                             
+Addison-Wesley                          4    $38.45                             
+PWS                                     2    $44.23                             
+Prentice Hall                           3    $44.98                             
+McGraw-Hill                             2    $51.98                             
+MacMillan                               1    $55.00                             
+
+8 rows selected.
+
+=================
+Problem 3 part d
+=================
+
+TITLE_NAME                           ORDER_QTY                                  
+----------------------------------- ----------                                  
+Creating Effective Software                  3                                  
+The C Programming Language                 100                                  
+
+=================
+Problem 3 part e
+=================
+
+PUB_NAME                                                                        
+------------------------------                                                  
+Prentice Hall                                                                   
+McGraw-Hill                                                                     
+

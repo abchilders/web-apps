@@ -1,0 +1,78 @@
+
+========
+JavaScript types: (see: course text, p. 284)
+========
+*   Number
+
+*   Boolean - true, false
+
+    *   the following values are considered falsey 
+        (based on Table 8.17, p. 309)
+
+        0   0.0  0.000
+        NaN
+        ""  ''   // the empty string
+        null
+        undefined
+
+*   String
+    *   MANY cool String methods, see Table 8.12, p. 299
+
+*   null
+
+*   undefined
+
+*   function
+
+*   Array
+    *   MANY cool Array methods, see Table 8.20, p. 316
+
+============
+a few more properties/values of note:
+============
+*   NaN
+
+*   Infinity
+   
+============
+the DOM tree
+============
+*   see course text, Chapter 9, section 9.3, pp. 359-369
+
+============
+PREFERRED way to add new elements to the DOM
+============
+*   see course text, Chapter 9, section 9.3.5, pp. 367-368
+
+*   Table 9.15, p. 368
+    "DOM element objects have the following methods for changing
+    their children lists"
+
+    *   appendChild(node) - places given node at the END of calling 
+        node's child list
+
+    *   insertBefore(new, old) - places new node in calling node's 
+        child list JUST before old
+
+    *   removeChild(node) - removes given node from calling node's 
+        child list
+
+    *   replaceChild(new, old) - replaces given child of the 
+        calling node with the new node
+
+============
+NOTE about using JavaScript for form validation
+============
+*   the form element can have an onsubmit event-handler attribute
+
+    *   as usual, its value is a FUNCTION that is to be called 
+        when the submit event happens to that form
+
+    *   interesting additional bit: 
+        *   IF this function returns true, the submission is allowed 
+            to proceed;
+
+        *   BUT! if this function returns false, 
+            it PREVENTS the form submission!
+
+

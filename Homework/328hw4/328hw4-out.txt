@@ -1,0 +1,175 @@
+<your name>
+
+======================
+problem 6
+======================
+
+
+Procedure created.
+
+No errors.
+
+*********************************
+TESTING insert_order_needed
+*********************************
+
+
+1 row updated.
+
+
+PL/SQL procedure successfully completed.
+
+
+=============================================================
+test passes if there is now an order_needed row for
+0805322272, for 50 copies, with date_created of today,
+and date_placed that is empty/null
+=============================================================
+
+
+ORD_NEEDED_ID ISBN        ORDER_QTY DATE_CREA DATE_PLAC                         
+------------- ---------- ---------- --------- ---------                         
+         1003 0805343024         10 01-FEB-19 04-FEB-19                         
+         1004 0201144719         15 01-FEB-19 04-FEB-19                         
+         1005 0201117363         12 01-FEB-19 04-FEB-19                         
+         1006 025602796X         15 01-FEB-19 04-FEB-19                         
+         1007 0131892428          3 01-FEB-19 04-FEB-19                         
+         1008 0024154334         15 01-FEB-19 04-FEB-19                         
+         1009 0805346317         10 01-FEB-19 04-FEB-19                         
+         1010 0070366955        100 21-FEB-19 24-FEB-19                         
+         1011 0805322272         50 30-APR-19                                   
+
+9 rows selected.
+
+undoing temporary testing changes
+
+Rollback complete.
+
+
+======================
+problem 7
+======================
+
+
+Function created.
+
+No errors.
+
+**********************
+TESTING pending_order_needed
+**********************
+
+
+Commit complete.
+
+
+1 row updated.
+
+
+PL/SQL procedure successfully completed.
+
+=============================================================
+test passes if returns true (IS a pending order_needed for
+0805322272)
+=============================================================
+
+
+PL/SQL procedure successfully completed.
+
+
+STATUS_STR                                                                      
+--------------------------------                                                
+TRUE                                                                            
+
+
+=============================================================
+test passes if returns false (order_needed row for
+025602796X is NOT pending)
+=============================================================
+
+
+PL/SQL procedure successfully completed.
+
+
+STATUS_STR                                                                      
+--------------------------------                                                
+FALSE                                                                           
+
+
+=============================================================
+test passes if returns false (0131103628 is a title,
+but is not in order_needed table at all, so cannot
+be pending)
+=============================================================
+
+
+PL/SQL procedure successfully completed.
+
+
+STATUS_STR                                                                      
+--------------------------------                                                
+FALSE                                                                           
+
+
+=============================================================
+test passes if returns false (1111111111 is NOT a title,
+so cannot be pending)
+=============================================================
+
+
+PL/SQL procedure successfully completed.
+
+
+STATUS_STR                                                                      
+--------------------------------                                                
+FALSE                                                                           
+
+
+========
+does it work for titles that have multiple previously-filled
+orders needed?
+========
+
+
+1 row created.
+
+
+1 row created.
+
+
+========
+0805343024 now has 3 prior handled orders-needed,
+but none are pending
+pending_order_needed test passes IF returns false:
+========
+
+
+PL/SQL procedure successfully completed.
+
+
+STATUS_STR                                                                      
+--------------------------------                                                
+FALSE                                                                           
+
+
+PL/SQL procedure successfully completed.
+
+
+========
+0805343024 now has a pending order_needed in addition to
+its 3 prior handled orders-needed
+pending_order_needed test passes IF now returns true:
+========
+
+
+PL/SQL procedure successfully completed.
+
+
+STATUS_STR                                                                      
+--------------------------------                                                
+TRUE                                                                            
+
+undoing temporary testing changes
+
+Rollback complete.
+

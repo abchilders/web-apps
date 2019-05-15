@@ -1,0 +1,188 @@
+
+*   next Tuesday -
+    XML and JSON - reading: course text: 
+    Chapter 12 sections 12.3 and 12.4
+
+============
+*   another debugging tidbit: strict mode
+============
+
+*   to enable strict mode, place the following
+    line at the very top of your JavaScript file:
+
+"use strict";
+
+    *   line must be EXACTLY as shown;
+    *   will be ignored by browsers that don't support
+        strict mode
+
+    *   causes browser to perform more-careful syntax
+        and usage-checking
+
+========
+JavaScript types: (see: course text, p. 284)
+========
+*   Number
+    *   JS does not distinguish between integer and real-valued
+        numbers
+
+*   Boolean - true, false
+
+    *   the following values are considered falsey 
+        (based on Table 8.17, p. 309)
+
+        0   0.0  0.000
+        NaN
+        ""  ''   // the empty string
+        null
+        undefined
+
+*   String
+    *   literals may be enclosed in single OR double quotes
+
+    *   MANY cool String methods, see Table 8.12, p. 299
+
+*   null
+    *   a special keyword denoting a null value;
+        also a primitive value
+    
+    *   JS is case-sensitive -- null is NOT the same
+        as Null, NULL, or etc.
+
+    *   NOT the same value as undefined!!!!!
+
+*   undefined
+    *   a top-level property whose value is undefined;
+        also a primitive value
+
+    *   NOT the same value as null!!!!
+
+=====
+aside: undefined and null are different values,
+    but both are considered falsey -- so this can be
+    helpful at times when you want some action done in
+    the case of either value:
+
+    if (myVariable)
+       ^ will be treated as falsey for undefined myVariable
+         and also treated as falsey for null myVariable
+=====
+
+*   function
+    *   course text calls it a type
+
+*   Array
+    *   MANY cool Array methods, see Table 8.20, p. 316
+
+============
+a few more properties/values of note:
+============
+*   NaN
+    *   when you do an arithmetic operation on something
+        JavaScript can't otherwise assume how to handle
+
+    *   isNaN() - function that tests whether something
+                  is NaN
+
+*   Infinity
+    *   result from an operation such as division by 0
+   
+=======
+parseInt, parseFloat - see Table 8.11, p. 298
+=======
+*   parseInt - accepts a value, tries to return a corresponding
+    integer
+
+*   parseFloat - accepts a value, tries to return a corresponding
+    real number
+
+*   beware of gotchas, see course text!
+
+==========
+Array object - Section 8.4.2, starting on p. 314
+==========
+*   var myArrayName = [];
+
+    ...creates a new array, myArrayName now references it
+
+*   can give it initial values:
+
+    var myStuff = [expr1, expr2, ... exprN];
+
+*   are 0-based
+    CAN access elements using typical [ ]
+
+    myStuff[0] is the first value in Array myStuff
+
+    length DATA FIELD to give an Array's number of elements
+
+    MANY methods! indexOf, reverse, sort, slice, and more!
+
+============
+the DOM tree
+============
+*   see course text, Chapter 9, section 9.3, pp. 359-369
+
+*   YES it is a tree,
+    YES it has SO many data fields and methods
+
+*   taste:
+    *   parentNode data field - a node's parent
+    *   want siblings of a node? previousSibling, nextSibling
+    *   an array of this node's children? childNodes data field
+
+*   traversing this tree is TRICKY!!!
+    *   see pp. 361-362
+
+*   besides getElementById
+    *   getElementsByTagName - returns an **Array**
+        of DOM elements of that tag
+
+    *   getElementsByName - returns an **Array**
+        of DOM elements with give name attribute value
+        *   nice for radio buttons...!
+
+    *   and more...
+
+============
+PREFERRED way to add new elements to the DOM
+============
+*   see course text, Chapter 9, section 9.3.5, pp. 367-368
+
+*   document element has cool methods in this area:
+    createElement()
+    removeElement()
+    etc.
+
+*   Table 9.15, p. 368
+    "DOM element objects have the following methods for changing
+    their children lists"
+
+    *   appendChild(node) - places given node at the END of calling 
+        node's child list
+
+    *   insertBefore(new, old) - places new node in calling node's 
+        child list JUST before old
+
+    *   removeChild(node) - removes given node from calling node's 
+        child list
+
+    *   replaceChild(new, old) - replaces given child of the 
+        calling node with the new node
+
+============
+NOTE about using JavaScript for form validation
+============
+*   the form element can have an onsubmit event-handler attribute
+
+    *   as usual, its value is a FUNCTION that is to be called 
+        when the submit event happens to that form
+
+    *   interesting additional bit: 
+        *   IF this function returns true, the submission is allowed 
+            to proceed;
+
+        *   BUT! if this function returns false, 
+            it PREVENTS the form submission!
+
+

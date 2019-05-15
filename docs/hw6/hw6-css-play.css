@@ -1,0 +1,238 @@
+/* Alex Childers
+   CS 328 - Homework 5 - Problem 2
+   Last modified: 2019/03/17
+*/
+
+/* Items are listed in the order in which they appear on the 
+	page, which also tends to be from least to most specific. */
+
+body
+{
+	margin-left: 1em;
+	margin-right: 1em; 
+}
+
+h1, p
+{
+	color: green; 
+	font-family: "Helvetica", "Arial", sans-serif; 
+	font-size: 1.5em; 
+}
+
+form
+{ 
+	background-color: #9ecef5; 
+	border-color: #4a8abf; 
+	border-style: solid; 
+	display: grid; 
+	grid-auto-rows: minmax(2em, auto);  
+	grid-gap: 0.5em; 
+	grid-template-columns: 100%; 
+	margin-left: auto; 
+	margin-right: auto;
+	padding: 1em; 
+	width: 80%; 
+}
+
+fieldset
+{
+	background-color: #e3f1fc;
+	border-color: black; 
+	font-variant: small-caps;
+}
+
+legend
+{
+	background-color: rgb(207, 233, 252);
+	border: 0.1em outset grey;
+	color: #800020;  
+	font-size: 1.5em; 
+	font-weight: bold;
+	margin: 0.3em; 
+	padding: 0.3em; 
+}
+
+label
+{
+	font-size: 1.1em; 
+}
+
+#basics_field
+{
+	grid-row: 1; 
+}
+
+#basics
+{
+	display: grid; 
+	grid-template-columns: 50% 50%; 
+	grid-auto-rows: minmax(1em, auto); 
+}
+
+/* using grid-gap seems to affect the right margins of elements, so I've 
+	found this method of spacing out grid elements to be preferable */
+#basics *
+{
+	margin: 0.5em; 
+}
+
+#name_span
+{
+	grid-column: 1; 
+	grid-row: 1; 
+}
+
+#age_span
+{
+	grid-column: 2; 
+	grid-row: 1; 
+}
+
+label[for="college"]
+{
+	grid-column: 1; 
+	grid-row: 2; 
+}
+
+#college
+{
+	grid-column: 2; 
+	grid-row: 2; 
+}
+
+#pref_field
+{
+	background-color: #cce5fa; 
+	grid-row: 2; 
+}
+
+#prefs
+{
+	display: grid; 
+	grid-auto-rows: minmax(2em, auto); 
+	grid-template-columns: 50% 50%; 
+}
+
+/* spacing out the fieldsets within the #prefs div */
+#prefs fieldset
+{
+	margin: 0.5em; 
+}
+
+#colors_field
+{
+	grid-column: 1 / 3; 
+	grid-row: 1; 
+}
+
+#colors
+{
+	display: grid; 
+	grid-auto-rows: minmax(1em, auto);
+	grid-gap: 0.2em; 
+	grid-template-columns: 40% 50% 10%; 
+}
+
+#colors input
+{
+	margin-left: 0.5em; 
+}
+
+#rainbow_pic
+{
+	grid-column: 1; 
+	grid-row: 1 / 4; 
+}
+
+label[for="fav_col"]
+{
+	grid-column: 2; 
+	grid-row: 1; 
+	text-align: right; 
+}
+
+#fav_col
+{
+	grid-column: 3; 
+	grid-row: 1; 
+}
+
+label[for="next_fav_col"]
+{
+	grid-column: 2; 
+	grid-row: 2; 
+	text-align: right; 
+}
+
+#next_fav_col
+{
+	grid-column: 3; 
+	grid-row: 2; 
+}
+
+label[for="worst_col"]
+{
+	grid-column: 2; 
+	grid-row: 3; 
+	text-align: right; 
+}
+
+#worst_col
+{
+	grid-column: 3; 
+	grid-row: 3; 
+}
+
+#tried_flav_field
+{
+	grid-column: 1; 
+	grid-row: 2; 
+}
+
+#fav_flav_field
+{
+	grid-column: 2; 
+	grid-row: 2; 
+}
+
+#poem_field
+{
+	grid-column: 1 / 3; 
+	grid-row: 3; 
+}
+
+#poem
+{
+	display: grid; 
+	grid-template-columns: 100%; 
+	grid-auto-rows: minmax(1em, auto); 
+}
+
+label[for="poem_input"]
+{
+	grid-column: 1; 
+	grid-row: 1; 
+}
+
+#poem_input
+{
+	grid-column: 1; 
+	grid-row: 2; 
+	padding: 0.5em;  
+}
+
+#final_form_buttons
+{
+	grid-row: 3; 
+	margin: 1em; 
+	margin-left: auto; 
+	margin-right: auto; 
+	text-align: center; 
+	width: 50%; 
+}
+
+input[type="submit"]
+{
+	background-color: #60DD65;
+	font-weight: bold; 
+}

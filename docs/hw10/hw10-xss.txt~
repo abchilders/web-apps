@@ -1,0 +1,10 @@
+Alex Childers
+Last modified: 2019/04/28
+
+* Take-away #1: HTML entity encoding untrusted data isn't enough to eliminate all cross-site
+  scripting. 
+* Why I chose this take-away: Up until now, I thought that performing an operation like 
+  "htmlspecialchars" in PHP was reasonably enough to prevent some cross-site scripting. 
+
+
+  

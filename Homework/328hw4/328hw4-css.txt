@@ -1,0 +1,44 @@
+Alex Childers
+CS 328 - Homework 4 - Problem 1
+Last modified: 2019/02/21
+
+==========
+Part A: Assume you have an external CSS3 style sheet in a file lookity.css,
+and assume that it happens to be in the same directory as an HTML5 document
+that you would like to be styled using this style sheet. 
+Give the entire element that you are expected to use for this, according to 
+class style standards. 
+-------------------------------------------------------------------------------
+
+<link href="lookity.css" type="text/css" rel="stylesheet" />
+
+==========
+Part B: Within what element inside your HTML5 document is your answer to 1 part
+A expected to be placed? (Just give the name of this element.)
+-------------------------------------------------------------------------------
+
+The above link element should be placed into the *head* element of the HTML5 
+document. 
+
+==========
+Part C: Should your answer to 1 part A be placed before or after the element
+that causes this HTML5 document to be styled using normalize.css?
+-------------------------------------------------------------------------------
+
+The link element should be placed *after* the link element causing this HTML5
+document to be styled using normalize.css. 
+
+==========
+Part D: Consider the following units- 	em	px	pts	%
+Which two of these are considered to be preferable, based on the course style
+standards?
+-------------------------------------------------------------------------------
+
+*em and %* are considered preferable, based on course style standards. 
+
+==========
+Part E: Based on the course style standards, is it considered acceptable to use
+a table element to layout an HTML5 form?
+-------------------------------------------------------------------------------
+
+*No*, HTML5 forms should not use the table element for any layout purposes. 

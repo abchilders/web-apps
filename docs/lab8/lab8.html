@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+    Form for CS 328 - Week 7 Lab Exercise - Part 2
+
+    modified and laid out by: Jakob Fletcher and Alex Childers
+    last modified: 3/15/2019
+
+    you can run this using the URL: nrs-projects.humboldt.edu/~jdf435/lab8/lab8.html
+
+-->
+
+<head>
+    <title> info about YOU! </title>
+    <meta charset="utf-8" />
+
+    <link href="http://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
+          type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1> Getting to know you... </h1>
+
+    <form action="lab8-response.php"
+          method="get">
+        <fieldset>
+        <legend> info about YOU! </legend>
+        <div id="overall_form">
+            <fieldset>
+            <legend> Basic information </legend>
+            <div id="basic_sect">
+                <label for="lastname_fld"> Last Name: </label>
+                <input type="text" name="lastname" id="lastname_fld"
+                       size="18" maxlength="18" required="required" />
+
+                <label for="age_fld"> Age: </label>
+                <input type="text" name="age" id="age_fld" size="5"
+                       maxlength="3" /> <br />
+
+                <label for="state_entry"> What state is your
+                     legal residence? </label>
+                <select name="state" id="state_entry">
+                    <option value="OR"> Oregon </option>
+                    <option value="MI"> Michigan </option>
+                    <option value="CA"
+                            selected="selected"> California
+                            </option>
+                </select>
+
+                <label for="secret_word_fld"> Secret
+                    word: </label>
+                <input type="password" name="secret_word"
+                       id="secret_word_fld" size="15" required="required" />
+
+                <label for="intro_area"> Tell me
+                    about yourself: </label>
+                <textarea name="intro" id="intro_area" rows="5"
+                          cols="33">
+Start typing here
+                </textarea>
+            </div>
+            </fieldset>
+
+            <fieldset>
+            <legend> Which ice cream flavor? </legend>
+            <div id="flavor_sect">
+
+                <input type="radio" name="ice_cream_flavor"
+                       value="chocolate" id="choc" />
+                <label for="choc"> Chocolate </label> 
+
+                <input type="radio" name="ice_cream_flavor"
+                       value="vanilla" id="van"
+                       checked="checked" />
+                <label for="van"> Vanilla </label>
+
+                <input type="radio" name="ice_cream_flavor"
+                       value="dark_chocolate" id="d_choc" />
+                <label for="d_choc"> Dark Chocolate </label>
+            </div> 
+            </fieldset>
+
+            <fieldset>
+            <legend> Which of these do you have? </legend>
+            <div id="transport_sect">
+                <input type="checkbox" name="bike" id="bike" />
+                <label for="bike"> Bicycle </label>
+
+                <input type="checkbox" name="car" id="car" />
+                <label for="car"> Car </label>
+
+                <input type="checkbox" name="skateboard" id="skt" />
+                <label for="skt"> Skateboard </label>
+
+                <input type="checkbox" name="horse" id="horse"
+                       checked="checked" />
+                <label for="horse"> Horse </label>
+            </div>
+            </fieldset>
+
+            <div id="submit">
+                <input type="submit" value="submit info" />
+            </div>
+        </div>
+        </fieldset>
+    </form>
+
+    <hr />
+
+    <p>
+        Validate by pasting .xhtml copy's URL into<br />
+        <a href="https://html5.validator.nu/">
+            https://html5.validator.nu/
+        </a>
+    </p>
+
+    <p>
+        <a href=
+           "http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss"
+                 alt="Valid CSS3!" height="31" width="88" />
+        </a>
+    </p>
+
+</body>
+</html>

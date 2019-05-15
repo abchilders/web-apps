@@ -1,0 +1,90 @@
+/*  Alex Childers
+	Last modified: 2019/03/10
+*/
+
+/* Rules are listed in alphabetical order.
+*/
+
+/* color theme:
+	white: #ffffff
+	light blue: #b3efff
+	bright purple: #9120ff
+	medium green: #297c4e
+	dark green: #17462c
+	black: #000000
+	
+	use this tool for color-accessibility:
+	https://toolness.github.io/accessible-color-matrix/
+*/
+
+/* importing fonts */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans');
+
+
+body
+{
+	background-color: #ffffff;
+	font-family: "Open Sans", Geneva, sans-serif; 
+	padding-top: 6em; 
+}
+
+h1
+{
+	float: left; 
+	font-family: "IBM Plex Sans", Helvetica, sans-serif; 
+	font-weight: bolder; 
+	width: 50%; 
+}
+
+.header
+{
+	background-color: #17462c;
+	color: #ffffff; 
+	left: 0; 
+	margin: 0; 
+	position: fixed; 
+	right: 0; 
+	top: 0;
+	width: 100%; 
+}
+
+.header h1
+{
+	padding-left: 0.5em;
+}
+
+.header p
+{
+	text-align: right; 
+}
+
+fieldset
+{
+	padding: 1em; 
+	margin: 1em; 
+}
+
+form
+{
+	margin-left: auto; 
+	margin-right: auto;	
+	width: 80%; 
+}
+
+input, label
+{
+	margin: 0.5em; 
+}
+
+legend
+{
+	background-color: #9120ff;
+	border: 0.1em solid black; 
+	color: white;
+	padding: 0.3em; 
+}
+
+p
+{
+	padding: 1em; 
+}

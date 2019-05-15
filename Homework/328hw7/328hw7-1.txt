@@ -1,0 +1,54 @@
+Alex Childers
+Last modified: 2019/03/27
+
+1a.) Write an example of what these style guidelines call a regular PHP tag,
+containing some syntactically-appropriate PHP content. 
+-------------------------------------------------------------------------------
+<?php
+	function square($num)
+	{
+		return $num * $num; 
+	}
+?>
+
+
+1b.) Write an example of what these style guidelines call a PHP expression tag,
+containing some syntactically-appropriate PHP content. 
+-------------------------------------------------------------------------------
+<?= 3 + 5 ?>
+
+
+1c.) Where should the opening and closing parts for regular PHP tags be placed?
+-------------------------------------------------------------------------------
+The opening and closing parts for regular PHP tags should each be placed on 
+their own line, lined up in the document if possible.  
+
+
+1d.) In contrast when compared to regular PHP tags, where are you encouraged to
+put PHP expression tags?
+-------------------------------------------------------------------------------
+We're encouraged to put PHP expression tags inline within HTML5 or document
+content.
+
+
+1e.) Where are PHP curly braces, { and }, expected to be placed?
+-------------------------------------------------------------------------------
+Curly braces should each be on their own lines, lined up with the beginning of 
+the control structure's first line. 
+
+
+1f.) You are expected to treat all user input as untrusted. What is an example
+of a PHP function mentioned in the PHP coding standards handout that you can 
+use to help guard against cross-site scripting?
+-------------------------------------------------------------------------------
+Some PHP functions that can be used to guard against XSS are strip_tags, 
+htmlspecialchars, and htmlentities. 
+
+
+1g.) To guard against SQL injection, you are advised to try to avoid dynamic 
+SQL statements built using concatenation. What is an example of one of the 
+alternatives mentioned in the PHP coding standards handout?
+-------------------------------------------------------------------------------
+Some alternatives to building dynamic SQL statements using concatenation
+include using bind variables, carefully designed Oracle stored procedures, and 
+carefully designed Oracle stored functions. 

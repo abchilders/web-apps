@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+    by: Alex Childers
+    last modified: 2019/03/17
+
+    you can run this using the URL: 
+	http://nrs-projects.humboldt.edu/~abc66/cs328/hw6/hw6-form-play.html
+
+-->
+
+<head>
+    <title> Homework 6 Problem 2 </title>
+    <meta charset="utf-8" />
+
+    <link href="http://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
+          type="text/css" rel="stylesheet" />
+		  
+	<link href="hw6-css-play.css" type="text/css" rel="stylesheet" />
+	
+</head>
+
+<body>
+	<p>
+		Alex Childers <br />
+		CS 328
+	</p>
+	
+	<h1>
+		Homework 6, Problem 2
+	</h1>
+	
+	<form action="https://www.youtube.com/watch?v=dQw4w9WgXcQ" method="post">
+		<fieldset id="basics_field">
+			<legend> The Basics </legend>
+			<div id="basics">
+				<span id="name_span">
+					<label for="name"> Name: </label> 
+					<input type="text" name="name"  id="name"
+						required="required" placeholder="Firstname Lastname"/>
+				</span>
+				
+				<span id="age_span">
+					<label for="age"> Age: </label> 
+					<input type="number" name="age" id="age" min="0" />
+				</span>
+				
+				<!-- drop-down boxes: appends name=value for each option 
+					selected -->
+				<label for="college"> Which college of HSU are you primarily 
+					involved in? </label>
+				<select id="college" name="college_dept">
+					<option value="CAHSS"> 
+						College of Arts, Humanities, and Social Sciences
+					</option>
+					<option value="CNRS" selected="selected" > 
+						College of Natural Resources and Sciences
+					</option>
+					<option value="CPS">
+						College of Professional Studies
+					</option>
+					<option value="GENS">
+						General Studies
+					</option>
+				</select>
+			</div>
+		</fieldset>
+		
+		<fieldset id="pref_field">
+			<legend> Preferences </legend>
+				<!-- NOTE: The color form inputs may not work in all browsers.
+					I found that they work in Firefox and Chrome, but not in
+					Internet Explorer. -->
+					
+				<!-- colors: append name=%23[hexcode] to the end of the action
+					URL (e.g: fave_color=%23ff0000), where %23 stands in for 
+					"#" -->
+			<div id="prefs">
+				<fieldset id="colors_field">
+					<legend> Choose some colors. </legend>
+					
+					<div id="colors">
+					
+					<a id="rainbow_pic" 
+						href="https://www.youtube.com/watch?v=OQSNhk5ICTI">
+						<img src="../images/rainbow.png" alt="rainbow" 
+							width="200"/>
+					</a>
+					
+					<label for="fav_col"> What is your favorite color? </label>
+					<input type="color" id="fav_col" name="fave_color" /> 
+					
+					<label for="next_fav_col"> What is your second favorite 
+						color? </label>
+					<input type="color" id="next_fav_col" 
+						name="second_fave_color" />
+					
+					<label for="worst_col"> What is your least favorite color?
+					</label>
+					<input type="color" id="worst_col" 
+						name="least_fav_color" />
+					
+					</div>
+				</fieldset>
+			
+			<!-- checkboxes: append name=on to the end of the action URL only
+				for the names of each checkbox that has been clicked -->
+			<fieldset id="tried_flav_field">
+				<legend> 
+					Which flavors have you tried? 
+				</legend>
+				
+				<div id="tried_flav">
+				<label>
+					<input type="checkbox" name="chocolate" /> Chocolate
+				</label>
+				<br />
+				
+				<label>
+					<input type="checkbox" name="vanilla" /> Vanilla
+				</label>
+				<br />
+				
+				<label>
+					<input type="checkbox" name="strawberry" /> Strawberry
+				</label>
+				<br />
+				
+				<label>
+					<input type="checkbox" name="asphalt" /> Asphalt
+				</label>
+				<br />
+				
+				<label>
+					<input type="checkbox" name="chalk" /> Chalk
+				</label>
+				<br />
+				</div>
+			</fieldset>
+			
+			<!-- radio buttons: appends name=value to the end of the action URL
+				for the one radio button that was selected-->
+			<fieldset id="fav_flav_field">
+				<legend>
+					Which flavor is your favorite?
+				</legend>
+				
+				<div id="fav_flav">
+				<label>
+					<input type="radio" name="fave_flavor" value="choc" 
+						checked="checked" /> 
+					Chocolate
+				</label>
+				<br />
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="vanl" /> 
+					Vanilla
+				</label>
+				<br />
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="strb" /> 
+					Strawberry
+				</label>
+				<br />
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="asph" /> 
+					Asphalt
+				</label>
+				<br />
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="chlk" /> 
+					Chalk
+				</label>
+				<br />
+				</div>
+			</fieldset>
+			
+			<fieldset id="poem_field">
+				<legend> Express yourself </legend>
+				
+				<div id="poem">
+				<label for="poem_input"> Write a poem about your favorite 
+					flavor. 
+				</label> 
+				<!-- according to the textbook, indentation causes the
+				resulting whitespace to become part of the textarea
+				content. how annoying. -->
+				<textarea id="poem_input" name="poem" rows="8" cols="30">
+I savor 
+The flavor
+My favored
+Lifesaver
+</textarea>
+				</div>
+			</fieldset>
+			</div>
+		</fieldset>
+		
+		<span id="final_form_buttons">
+			<input type="submit" name="submit_form" value="Submit form" />
+			<input type="reset"  value="Reset this form" />
+		</span>
+	</form>
+
+    <hr />
+
+    <p>
+        Validate by pasting .xhtml copy's URL into<br />
+        <a href="https://html5.validator.nu/">
+            https://html5.validator.nu/
+        </a>
+    </p>
+
+    <p>
+        <a href=
+           "http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss"
+                 alt="Valid CSS3!" height="31" width="88" />
+        </a>
+    </p>
+
+</body>
+</html>
+

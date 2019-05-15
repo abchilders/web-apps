@@ -1,0 +1,73 @@
+
+by Alex Childers
+
+
+Trigger created.
+
+No errors.
+
+Commit complete.
+
+========================================================================
+The following rental insert should fail-- the client's credit rating
+is less than 1.5.
+========================================================================
+insert into rental(rental_num, client_num, vid_id, date_out, date_due)
+            *
+ERROR at line 1:
+ORA-20000: client 2222's credit rating is below 1.5 
+ORA-06512: at "ABC66.APPROVE_RENTAL", line 10 
+ORA-04088: error during execution of trigger 'ABC66.APPROVE_RENTAL' 
+
+
+========================================================================
+The following rental insert should succeed-- the client's credit rating
+is greater than or equal to 1.5.
+========================================================================
+rental successful; client 4444's credit rating is at least 1.5                  
+
+1 row created.
+
+========================================================================
+Note that in the following list of rental contents, rental 0000025
+should not appear, but rental 0000026 should appear.
+========================================================================
+
+RENTAL_ CLIE VID_ID DATE_OUT  DATE_DUE  DATE_RETU                               
+------- ---- ------ --------- --------- ---------                               
+0000001 5555 120011 21-SEP-18 23-SEP-18 22-SEP-18                               
+0000002 2222 130031 19-SEP-18 22-SEP-18                                         
+0000003 2222 130012 03-SEP-18 08-SEP-18 04-SEP-18                               
+0000004 3333 130012 21-SEP-18 22-SEP-18                                         
+0000005 3333 210011 08-AUG-18 11-AUG-18                                         
+0000007 3333 120011 15-SEP-18 18-SEP-18 21-SEP-18                               
+0000008 1111 130022 04-SEP-18 07-SEP-18 14-SEP-18                               
+0000009 6666 130012 13-SEP-18 16-SEP-18 16-SEP-18                               
+0000010 7777 120011 14-SEP-18 17-SEP-18 17-SEP-18                               
+0000011 8888 230012 05-SEP-18 10-SEP-18                                         
+0000012 9999 210031 10-SEP-18 13-SEP-18 13-SEP-18                               
+
+RENTAL_ CLIE VID_ID DATE_OUT  DATE_DUE  DATE_RETU                               
+------- ---- ------ --------- --------- ---------                               
+0000013 9999 210041 10-SEP-18 13-SEP-18 13-SEP-18                               
+0000014 9999 230033 10-SEP-18 13-SEP-18 13-SEP-18                               
+0000015 3333 420011 01-SEP-18 04-SEP-18 03-SEP-18                               
+0000016 2222 330023 11-SEP-18 16-SEP-18 15-SEP-18                               
+0000017 5555 220013 22-SEP-18 25-SEP-18                                         
+0000018 1111 220062 21-SEP-18 26-SEP-18                                         
+0000019 3333 320032 06-SEP-18 09-SEP-18 07-SEP-18                               
+0000020 7777 130031 29-AUG-18 01-SEP-18 02-SEP-18                               
+0000021 6666 210011 15-SEP-18 17-SEP-18                                         
+0000022 5555 210031 16-SEP-18 18-SEP-18 17-SEP-18                               
+0000023 4444 120011 16-SEP-18 18-SEP-18 21-SEP-18                               
+
+RENTAL_ CLIE VID_ID DATE_OUT  DATE_DUE  DATE_RETU                               
+------- ---- ------ --------- --------- ---------                               
+0000024 7777 130031 08-SEP-18 10-SEP-18 09-SEP-18                               
+0000026 4444 120011 21-JAN-18 23-JAN-18                                         
+
+24 rows selected.
+
+
+Rollback complete.
+

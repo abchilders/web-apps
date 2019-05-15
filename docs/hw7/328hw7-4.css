@@ -1,0 +1,59 @@
+/* 	Alex Childers
+	Last modified: 2019/03/31
+*/ 
+
+body
+{
+	font-family: sans-serif; 
+	background-color: #e6ffe6; 
+}
+
+h1, h2, form
+{
+	margin: 1em; 
+}
+
+h1, h2
+{
+	text-align: center; 
+}
+
+* fieldset
+{
+	margin: 0.5em; 
+	padding: 1em; 
+}
+
+legend
+{
+	background-color: #ffffff; 
+	border: 0.1em solid grey; 
+	padding: 0.5em; 
+}
+
+input
+{
+	margin: 0.5em; 
+}
+
+input[type="submit"]
+{
+	width: 20%; 
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+table, td, th
+{
+	border: 0.1em double black; 
+	border-collapse: collapse; 
+	padding: 0.7em; 
+	margin-left: auto;
+	margin-right: auto; 
+	width: 80%; 
+}
+
+caption
+{
+	margin: 0.5em; 
+}

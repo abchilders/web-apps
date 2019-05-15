@@ -1,0 +1,160 @@
+/*  Alex Childers
+	Last modified: 2019/04/05
+*/
+
+/* Rules are listed in alphabetical order.
+*/
+
+/* color theme:
+	grain 
+		original: #d7cec7 
+		lighter: #dfd7d2
+	blackboard #565656
+	oxblood #76323f
+	tan #c09f80
+*/
+
+/* importing fonts */
+@import url(https://fonts.googleapis.com/css?family=Nosifer);
+@import url(https://fonts.googleapis.com/css?family=Cutive);
+
+body
+{
+	background-color: #F7F5F3;
+	font-family: Cutive, Palatino, serif; 
+	padding-top: 5em; 
+}
+
+#desired_isbn
+{
+	grid-column: 2; 
+	grid-row: 1; 
+}
+
+div.login
+{
+	display: grid; 
+	grid-template-columns: 25% 75%; 
+	grid-auto-rows: minmax(1em, auto); 
+}
+
+div.sub_button
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%; 
+}
+
+h1
+{
+	background-color: #76323f;
+	color: white; 
+	font-weight: bolder; 
+	font-family: Nosifer, "Apple Chancery", cursive;
+	left: 0; 
+	margin: 0; 
+	padding: 0.5em;
+	position: fixed; 
+	right: 0; 
+	top: 0;
+	width: 100%; 
+}
+
+fieldset
+{
+	padding: 1em; 
+	margin: 1em; 
+}
+
+fieldset *
+{
+	margin: 0.5em; 
+}
+
+form
+{
+	margin-left: auto; 
+	margin-right: auto;	
+	width: 80%; 
+}
+
+label
+{
+	margin: 0.5em; 
+}
+
+#insert_ord_div
+{
+	display: grid; 
+	grid-template-columns: 33% 67%; 
+	grid-auto-rows: minmax(1em, auto); 
+}
+
+label[for="desired_isbn"]
+{
+	grid-column: 1; 
+	grid-row: 1; 
+	text-align: right; 
+}
+
+label[for="password"]
+{
+	grid-column: 1;
+	grid-row: 2; 
+	text-align: right; 
+}
+
+label[for="quantity"]
+{
+	grid-column: 1; 
+	grid-row: 2; 
+	text-align: right; 
+}
+
+label[for="username"]
+{
+	grid-column: 1;
+	grid-row: 1; 
+	text-align: right; 
+}
+
+legend
+{
+	background-color: #76323f;
+	border: 0.1em solid black; 
+	color: white;
+	padding: 0.3em; 
+}
+
+p
+{
+	margin: 2em; 
+}
+
+#password
+{
+	grid-column: 2; 
+	grid-row: 2; 
+}
+
+#quantity
+{
+	grid-column: 2; 
+	grid-row: 2; 
+}
+
+table, td, th
+{
+	border: .1em solid black; 
+	border-collapse: collapse; 
+	margin-left: auto; 
+	margin-right: auto; 
+	padding: 0.2em; 
+	width: 50%; 
+}
+
+#username
+{
+	grid-column: 2; 
+	grid-row: 1; 
+}

@@ -1,0 +1,50 @@
+/*	Alex Childers
+	Last modified: 2019/04/23
+*/
+
+label
+{
+	text-align: right; 
+}
+
+label[for="owner_email"]
+{
+	grid-column: 1; 
+	grid-row: 3; 
+}
+label[for="own_id"]
+{
+	grid-column: 1; 
+	grid-row: 1; 
+}
+
+label[for="owner_phone"]
+{
+	grid-column: 1; 
+	grid-row: 2; 
+}
+
+#own_id
+{
+	grid-column: 2; 
+	grid-row: 1; 
+}
+
+#owner_email
+{
+	grid-column: 2; 
+	grid-row: 3; 
+}
+
+#owner_form
+{
+	display: grid; 
+	grid-auto-rows: minmax(2em, auto); 
+	grid-template-columns: 50% 50%;
+}
+
+#owner_phone
+{
+	grid-column: 2; 
+	grid-row: 2; 
+}

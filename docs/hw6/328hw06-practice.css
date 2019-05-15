@@ -1,0 +1,178 @@
+/* Alex Childers
+   Last modified: 2019/03/17
+*/
+
+/* Color palette: 
+	white - #FFFFFF
+	pink - #FFAA9D
+	purple - #B79DFF
+	chartreuse - #E3D2FF
+	dark red - #5B0000
+	black - #000000
+*/
+
+body
+{
+	font-family: Helvetica, Arial, sans-serif; 
+	margin: 1em; 
+}
+
+fieldset
+{
+	background-color: #E5FF9D; 
+	padding: 1em; 
+}
+
+h1
+{
+	background-color: #000000; 
+	color: #FFAA9D;	
+	margin-top: 0;
+	margin-left: 0; 
+	padding: 0.4em; 
+}
+
+input[type="submit"]
+{
+	grid-column: 1 / 4; 
+	grid-row: 7; 
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 30%; 
+}
+
+label[for="list_pref"]
+{
+	grid-column: 1; 
+	grid-row: 5;
+	text-align: right; 	
+}
+
+label [for="os_linux"]
+{
+	grid-column: 2; 
+	grid-row: 3; 
+}
+
+label[for="os_mac"]
+{
+	grid-column: 2; 
+	grid-row: 2; 
+}
+
+label[for="os_other"]
+{
+	grid-column: 2;
+	grid-row: 4; 
+}
+
+label[for="os_windows"]
+{
+	grid-column: 2; 
+	grid-row: 1; 
+}
+
+label[for="password_fld"]
+{
+	grid-column: 1; 
+	grid-row: 3; 
+	text-align: right; 
+}
+
+label[for="ref_fld"]
+{
+	grid-column: 1; 
+	grid-row: 4; 
+	text-align: right; 
+}
+
+label[for="username_fld"]
+{
+	grid-column: 1; 
+	grid-row: 2; 
+	text-align: right; 
+}
+
+legend
+{
+	border: 0.1em solid #5B0000; 
+	background-color: #E3D2FF; 
+	padding: 0.4em; 
+}
+
+#list_pref
+{
+	grid-column: 2; 
+	grid-row: 5; 
+}
+
+#os_div
+{
+	display: grid; 
+	grid-auto-rows: minmax(2em, auto); 
+	grid-template-columns: 10% 90%; 
+}
+
+#os_fs
+{
+	grid-column: 3; 
+	grid-row: 1 / 7; 
+}
+
+#os_linux
+{
+	grid-column: 1; 
+	grid-row: 3; 
+}
+
+#os_mac
+{
+	grid-column: 1; 
+	grid-row: 2; 
+}
+
+#os_other
+{
+	grid-column: 1; 
+	grid-row: 4; 
+}
+
+#os_windows
+{
+	grid-column: 1; 
+	grid-row: 1; 
+}
+
+#password_fld
+{
+	grid-column: 2; 
+	grid-row: 3; 
+}
+
+#ref_fld
+{
+	grid-column: 2; 
+	grid-row: 4; 
+}
+
+#reg_div
+{
+	display: grid; 
+	grid-auto-rows: minmax(2em, auto);
+	grid-gap: 0.5em; 
+	grid-template-columns: 35% 35% 30%;
+	padding: 1em; 
+}
+
+small
+{
+	grid-column: 1; 
+	grid-row: 6; 
+	text-align: right; 
+}
+
+#username_fld
+{
+	grid-column: 2; 
+	grid-row: 2; 
+}

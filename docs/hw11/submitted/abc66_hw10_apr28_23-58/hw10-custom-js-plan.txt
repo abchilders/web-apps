@@ -1,0 +1,8 @@
+Alex Childers
+Last modified: 2019/04/28
+
+I would like to implement one of the following ideas:
+- use JavaScript to dynamically generate placeholders for form inputs, based
+  on what valid inputs would look like, or
+- validate form inputs using Javascript, like the one of the examples we 
+  programmed in lab. 

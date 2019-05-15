@@ -1,0 +1,22 @@
+=============
+Alex Childers
+=============
+
+***bool_to_string(TRUE) should return 'TRUE':***
+
+PL/SQL procedure successfully completed.
+
+
+STRING_TEST                                                                     
+--------------------------------                                                
+TRUE                                                                            
+
+***bool_to_string(FALSE) should return 'FALSE':***
+
+PL/SQL procedure successfully completed.
+
+
+STRING_TEST                                                                     
+--------------------------------                                                
+FALSE                                                                           
+

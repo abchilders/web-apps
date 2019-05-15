@@ -1,0 +1,317 @@
+<your name>
+======================
+problem 2
+======================
+
+Function created.
+
+No errors.
+
+***************************************
+test sell_book
+***************************************
+
+===================
+TEST 1
+===================
+
+=============================================================
+there is an order_needed row for 025602796X:
+=============================================================
+
+ORD_NEEDED_ID ISBN        ORDER_QTY DATE_CREA DATE_PLAC                                             
+------------- ---------- ---------- --------- ---------                                             
+         1006 025602796X         15 01-FEB-19 04-FEB-19                                             
+
+=============================================================
+Trying to sell 5 copies of 025602796X should SUCCEED
+with a code of 0:
+=============================================================
+
+PL/SQL procedure successfully completed.
+
+
+RESULTS_CODE                                                                                        
+------------                                                                                        
+           0                                                                                        
+
+=============================================================
+Are there now 5 copies of 025602796X?
+=============================================================
+
+ISBN       TITLE_NAME                          QTY_ON_HAND ORDER_POINT AUTO_ORDER_QTY O             
+---------- ----------------------------------- ----------- ----------- -------------- -             
+025602796X Financial Accounting                          5          30             15 T             
+
+=============================================================
+there better be the same row (and just one) in order_needed:
+=============================================================
+
+ORD_NEEDED_ID ISBN        ORDER_QTY DATE_CREA DATE_PLAC                                             
+------------- ---------- ---------- --------- ---------                                             
+         1006 025602796X         15 01-FEB-19 04-FEB-19                                             
+
+===================
+TEST 2
+===================
+
+=============================================================
+Trying to sell 10 copies of 0130355488 should FAIL
+with a code of -1 (this ISBN is not in the database):
+=============================================================
+
+PL/SQL procedure successfully completed.
+
+
+RESULTS_CODE                                                                                        
+------------                                                                                        
+          -1                                                                                        
+
+===================
+TEST 3
+===================
+
+=============================================================
+there should NOT be an order_needed row for '0805367829':
+=============================================================
+
+no rows selected
+
+=============================================================
+Trying to sell 11 copies of 0805367829 should SUCCEED
+with a code of 0:
+=============================================================
+
+PL/SQL procedure successfully completed.
+
+
+RESULTS_CODE                                                                                        
+------------                                                                                        
+           0                                                                                        
+
+=============================================================
+are there now 39 copies of 0805367829, with on_order still F?
+(it needs an order, has not been ordered yet)
+=============================================================
+
+ISBN       TITLE_NAME                          QTY_ON_HAND ORDER_POINT AUTO_ORDER_QTY O             
+---------- ----------------------------------- ----------- ----------- -------------- -             
+0805367829 Case Book for Data Base Management           39          40             10 F             
+
+=============================================================
+there SHOULD now be an order_needed row for 0805367829
+(with an order quantity of 10):
+=============================================================
+
+ORD_NEEDED_ID ISBN        ORDER_QTY DATE_CREA DATE_PLAC                                             
+------------- ---------- ---------- --------- ---------                                             
+         1011 0805367829         10 30-APR-19                                                       
+
+===================
+TEST 4
+===================
+
+=============================================================
+there should NOT be an order_needed row for '087150331X':
+=============================================================
+
+no rows selected
+
+=============================================================
+Trying to sell 1 copy of 087150331X should SUCCEED
+with a code of 0:
+=============================================================
+
+PL/SQL procedure successfully completed.
+
+
+RESULTS_CODE                                                                                        
+------------                                                                                        
+           0                                                                                        
+
+=============================================================
+are there now 2 copies of 087150331X, with order_needed still F?
+(it needs an order, has not been ordered yet)
+=============================================================
+
+ISBN       TITLE_NAME                          QTY_ON_HAND ORDER_POINT AUTO_ORDER_QTY O             
+---------- ----------------------------------- ----------- ----------- -------------- -             
+087150331X Calculus with Analytic Geometry               2           2              5 F             
+
+=============================================================
+there SHOULD now be an order_needed row for 087150331X
+(with an order quantity of 5):
+=============================================================
+
+ORD_NEEDED_ID ISBN        ORDER_QTY DATE_CREA DATE_PLAC                                             
+------------- ---------- ---------- --------- ---------                                             
+         1012 087150331X          5 30-APR-19                                                       
+
+===================
+TEST 5
+===================
+
+=============================================================
+Trying to sell 1 copy of 087150331X should SUCCEED
+with a code of 0:
+=============================================================
+
+PL/SQL procedure successfully completed.
+
+
+RESULTS_CODE                                                                                        
+------------                                                                                        
+           0                                                                                        
+
+=============================================================
+is there now 1 copy of 087150331X, with order_needed still F?
+=============================================================
+
+ISBN       TITLE_NAME                          QTY_ON_HAND ORDER_POINT O                            
+---------- ----------------------------------- ----------- ----------- -                            
+087150331X Calculus with Analytic Geometry               1           2 F                            
+
+=============================================================
+BUT there SHOULD still be ONLY ONE order_needed row for 087150331X:
+=============================================================
+
+ORD_NEEDED_ID ISBN        ORDER_QTY DATE_CREA DATE_PLAC                                             
+------------- ---------- ---------- --------- ---------                                             
+         1012 087150331X          5 30-APR-19                                                       
+
+===================
+TEST 6
+===================
+
+=============================================================
+Trying to sell -5 copies of 0574214100 should FAIL
+with a code of -2 (should not sell a non-positive
+number of books!):
+=============================================================
+
+PL/SQL procedure successfully completed.
+
+
+RESULTS_CODE                                                                                        
+------------                                                                                        
+          -2                                                                                        
+
+===================
+TEST 7
+===================
+
+=============================================================
+there should NOT be an order_needed row for '0070790523':
+=============================================================
+
+no rows selected
+
+=============================================================
+Trying to sell 4 copies of 0070790523 should SUCCEED
+with a code of 0:
+=============================================================
+
+PL/SQL procedure successfully completed.
+
+
+RESULTS_CODE                                                                                        
+------------                                                                                        
+           0                                                                                        
+
+=============================================================
+are there now 71 copies of 0070790523, with order_needed still F?
+=============================================================
+
+ISBN       TITLE_NAME                          QTY_ON_HAND ORDER_POINT O                            
+---------- ----------------------------------- ----------- ----------- -                            
+0070790523 SPSS                                         71          70 F                            
+
+=============================================================
+there should NOT be an order_needed for this title:
+=============================================================
+
+no rows selected
+
+===================
+TEST 8
+===================
+
+=============================================================
+Trying to sell 21 copies of 0805367802 should FAIL
+with a code of -3 (should not sell MORE than the current
+quantity on hand of a book):
+=============================================================
+
+PL/SQL procedure successfully completed.
+
+
+RESULTS_CODE                                                                                        
+------------                                                                                        
+          -3                                                                                        
+
+=============================================================
+had better still have 20 of this title (sale not permitted
+for more than on-hand...!)
+=============================================================
+
+ISBN       TITLE_NAME                          QTY_ON_HAND ORDER_POINT O                            
+---------- ----------------------------------- ----------- ----------- -                            
+0805367802 Data Base Management                         20           5 F                            
+
+=============================================================
+there should NOT be an order_needed for this title:
+=============================================================
+
+no rows selected
+
+=============================================
+title table after tests but before rollback:
+=============================================
+
+ISBN       QTY_ON_HAND ORDER_POINT O                                                                
+---------- ----------- ----------- -                                                                
+0024154334           3          10 T                                                                
+0070366955          10          20 T                                                                
+0070790523          71          70 F                                                                
+0131103628          10          25 T                                                                
+0131892428           2           3 T                                                                
+0138229821          10           5 F                                                                
+0201106868           3           1 F                                                                
+0201111160           5           4 F                                                                
+0201117363          12          12 T                                                                
+0201144719          10          15 T                                                                
+025602796X           5          30 T                                                                
+
+ISBN       QTY_ON_HAND ORDER_POINT O                                                                
+---------- ----------- ----------- -                                                                
+0574214100          30          25 F                                                                
+0805322272          15          12 F                                                                
+0805343024           5          10 T                                                                
+0805346317           2           5 T                                                                
+0805367802          20           5 F                                                                
+0805367829          39          40 F                                                                
+087150331X           1           2 F                                                                
+0871507870          35          30 F                                                                
+
+19 rows selected.
+
+====================================================
+order_needed table after tests but before call
+pop-bks.sql again:
+====================================================
+
+ORD_NEEDED_ID ISBN        ORDER_QTY DATE_CREA DATE_PLAC                                             
+------------- ---------- ---------- --------- ---------                                             
+         1003 0805343024         10 01-FEB-19 04-FEB-19                                             
+         1004 0201144719         15 01-FEB-19 04-FEB-19                                             
+         1005 0201117363         12 01-FEB-19 04-FEB-19                                             
+         1006 025602796X         15 01-FEB-19 04-FEB-19                                             
+         1007 0131892428          3 01-FEB-19 04-FEB-19                                             
+         1008 0024154334         15 01-FEB-19 04-FEB-19                                             
+         1009 0805346317         10 01-FEB-19 04-FEB-19                                             
+         1010 0070366955        100 21-FEB-19 24-FEB-19                                             
+         1011 0805367829         10 30-APR-19                                                       
+         1012 087150331X          5 30-APR-19                                                       
+
+10 rows selected.
+

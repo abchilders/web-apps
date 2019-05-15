@@ -1,0 +1,52 @@
+Alex Childers and Grant Pawell
+
+Trigger created.
+
+No errors.
+Insert/update accepted                                                          
+
+1 row created.
+
+insert into customer
+            *
+ERROR at line 1:
+ORA-20000: Invalid empl_rep 
+ORA-06512: at "GJP33.CK_EMPL_REP", line 10 
+ORA-04088: error during execution of trigger 'GJP33.CK_EMPL_REP' 
+
+
+Insert/update accepted                                                          
+
+1 row updated.
+
+update customer
+       *
+ERROR at line 1:
+ORA-20000: Invalid empl_rep 
+ORA-06512: at "GJP33.CK_EMPL_REP", line 10 
+ORA-04088: error during execution of trigger 'GJP33.CK_EMPL_REP' 
+
+
+
+CUST_I CUST_LNAME           CUST_FNAME      EMPL CUST_STREET                    
+------ -------------------- --------------- ---- ------------------------------ 
+CUST_CITY       CU CUST_ZIP   CUST_BALANCE                                      
+--------------- -- ---------- ------------                                      
+123456 Firstly              First           7499 1111 First Street              
+Fortuna         CA 95520           1111.11                                      
+                                                                                
+234567 Secondly             Second          7654 2222 Second Street             
+McKinleyville   CA 95523             222.2                                      
+                                                                                
+345678 Thirdly              Third           7499 333 Third Street               
+Arcata          CA 95519-1234            0                                      
+                                                                                
+
+CUST_I CUST_LNAME           CUST_FNAME      EMPL CUST_STREET                    
+------ -------------------- --------------- ---- ------------------------------ 
+CUST_CITY       CU CUST_ZIP   CUST_BALANCE                                      
+--------------- -- ---------- ------------                                      
+1      Doe                  Jane            7499 Rossow Street                  
+Arcata          CA 95521           1234.56                                      
+                                                                                
+

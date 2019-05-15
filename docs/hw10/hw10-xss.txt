@@ -1,0 +1,29 @@
+Alex Childers
+Last modified: 2019/04/28
+
+* Take-away #1: HTML entity encoding untrusted data isn't enough to eliminate 
+  all cross-site scripting. 
+* Why I chose this take-away: Up until now, I thought that performing an 
+  operation like "htmlspecialchars" in PHP was reasonably enough to prevent 
+  some cross-site scripting. However, I never thought about dynamically
+  putting user input into a JavaScript or CSS file, nor was I familiar with
+  any other escape syntax within HTMl itself. 
+
+* Take-away #2: JavaScript data values can be vulnerable to cross-site scripting.
+* Why I chose this take-away: In creating number-fun.js, I found myself 
+  wondering how to protect myself from XSS while creating my functions, or if 
+  it was even necessary. However, XSS related to JavaScript is more complex than 
+  I thought, including attacks such as escape-the-escape attacks occurring when 
+  one tries to manually escape special characters. I'm still trying to learn 
+  exactly how I can protect myself from this within an external .js file, but 
+  it's good to know that the threat exists. 
+
+* Take-away #3: User data should only be used in a CSS property value, and 
+  should be escaped before permitting such use.
+* Why I chose this take-away: While I haven't tried this yet, it makes sense 
+  that one might like to let user input influence the styling of an HTMl 
+  document. However, I wouldn't have imagined that CSS could be so vulnerable
+  to cross-site scripting, so the idea of guarding your CSS is new to me as well.
+  I would like to find examples of the \HH escape format to help me practice this
+  in the future. 
+  

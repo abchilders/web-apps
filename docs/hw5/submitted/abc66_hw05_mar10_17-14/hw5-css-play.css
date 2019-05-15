@@ -1,0 +1,57 @@
+/* Alex Childers
+   CS 328 - Homework 5 - Problem 2
+   Last modified: 2019/03/08
+*/
+
+/* Items are listed in the order in which they appear on the 
+	page, which also tends to be from least to most specific. */
+
+h1, p
+{
+	color: green; 
+	font-family: "Helvetica", "Arial", sans-serif; 
+	font-size: 1.5em; 
+}
+
+form
+{
+	margin-left: auto; 
+	margin-right: auto;
+	width: 80%; 
+}
+
+fieldset
+{
+	background-color: #e3f1fc; 
+	border-color: black; 
+	font-variant: small-caps;
+	padding: 1em; 
+}
+
+legend
+{
+	background-color: rgb(207, 233, 252);
+	border: 0.1em outset grey;
+	color: #800020;  
+	font-size: 1.5em; 
+	font-weight: bold;
+	margin: 0.3em; 
+	padding: 0.3em; 
+}
+
+label
+{
+	font-size: 1.1em; 
+}
+
+#rainbow_pic
+{
+	float: left; 
+	margin: 1em; 
+	width: 20%;
+}
+
+textarea
+{
+	padding: 0.5em; 
+}

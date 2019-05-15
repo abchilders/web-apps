@@ -1,0 +1,64 @@
+=========
+problem 2
+=========
+
+Procedure created.
+
+No errors.
+This should shout JUST DO IT!!! 3 times:
+==========================================
+JUST DO IT!!!                                                                   
+JUST DO IT!!!                                                                   
+JUST DO IT!!!                                                                   
+
+PL/SQL procedure successfully completed.
+
+This should shout nothing at all:
+========================================================================
+
+PL/SQL procedure successfully completed.
+
+This should print a message stating that the desired message can't be
+printed:
+=====================================================================
+You can't shout "Cannot Print Me" -3 times.                                     
+
+PL/SQL procedure successfully completed.
+
+
+************************
+TESTING silly_shout
+************************
+
+test passes if it shows 3 "shouts" of HOWDY!!!:
+==========================================================
+HOWDY!!!                                                                        
+HOWDY!!!                                                                        
+HOWDY!!!                                                                        
+
+PL/SQL procedure successfully completed.
+
+
+test passes if it shows 5 "shouts" of CS 328 - RAH RAH RAH!!!!
+=============================================================
+CS 328 - RAH RAH RAH!!!!                                                        
+CS 328 - RAH RAH RAH!!!!                                                        
+CS 328 - RAH RAH RAH!!!!                                                        
+CS 328 - RAH RAH RAH!!!!                                                        
+CS 328 - RAH RAH RAH!!!!                                                        
+
+PL/SQL procedure successfully completed.
+
+
+test passes if see NO output (asked to shout 0 times)
+==========================================================
+
+PL/SQL procedure successfully completed.
+
+
+test passes if it complains that it cannot "shout" moo -1 times:
+==========================================================
+You can't shout "moo" -1 times.                                                 
+
+PL/SQL procedure successfully completed.
+

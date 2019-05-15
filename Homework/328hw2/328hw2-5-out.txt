@@ -1,0 +1,306 @@
+=============
+Alex Childers
+=============
+
+Function created.
+
+No errors.
+
+Procedure created.
+
+No errors.
+
+************************
+TESTING delete_volunteer
+************************
+
+
+Commit complete.
+
+We're going to delete volunteer 300038, Claire Strong, from the
+database. We can see that she exists in all the applicable tables:
+==================================================================
+
+worker_providing_service:
+
+ WORKER_ID SERVIC                                                               
+---------- ------                                                               
+    300038 B10001                                                               
+
+volunteer_handling_permissions:
+
+ WORKER_ID PET_MAY_HA                                                           
+---------- ----------                                                           
+    300038 dog                                                                  
+
+volunteer:
+
+ WORKER_ID                                                                      
+----------                                                                      
+    300038                                                                      
+
+worker_email_addr:
+
+ WORKER_ID EMAIL                                                                
+---------- --------------------------------------------------                   
+    300038 clairestrong@webmail.aa                                              
+
+worker_phone_num:
+
+ WORKER_ID PHONE_NUMB                                                           
+---------- ----------                                                           
+    300038 5735550111                                                           
+
+worker:
+
+ WORKER_ID WORKER_TYPE          FIRST_NAME           LAST_NAME                  
+---------- -------------------- -------------------- --------------------       
+    300038 volunteer            Claire               Strong                     
+
+
+Test passes if our select statements targeting worker 300038 return that
+no data was found:
+========================================================================
+
+
+PL/SQL procedure successfully completed.
+
+worker_providing_service:
+
+no rows selected
+
+volunteer_handling_permissions:
+
+no rows selected
+
+volunteer:
+
+no rows selected
+
+worker_email_addr:
+
+no rows selected
+
+worker_phone_num:
+
+no rows selected
+
+worker:
+
+no rows selected
+
+
+Test passes if you see an error message from trying to delete an invalid
+volunteer ID, 123:
+========================================================================
+
+BEGIN delete_volunteer(123); END;
+
+*
+ERROR at line 1:
+ORA-20100: Volunteer 123 does not exist. 
+ORA-06512: at "ABC66.DELETE_VOLUNTEER", line 13 
+ORA-06512: at line 1 
+
+
+And now the contents of the table, conspicuously missing worker 300038:
+=======================================================================
+
+
+ WORKER_ID SERVIC                                                               
+---------- ------                                                               
+    300000 B10000                                                               
+    300000 B10001                                                               
+    300000 B10002                                                               
+    300000 B10003                                                               
+    300002 B10000                                                               
+    300002 B10001                                                               
+    300002 B10002                                                               
+    300002 B10003                                                               
+    300004 D10004                                                               
+    300004 D10005                                                               
+    300004 D10006                                                               
+
+ WORKER_ID SERVIC                                                               
+---------- ------                                                               
+    300004 D10007                                                               
+    300006 C10008                                                               
+    300006 C10009                                                               
+    300006 C10010                                                               
+    300006 C10011                                                               
+    300006 C10012                                                               
+    300008 C10013                                                               
+    300008 C10014                                                               
+    300008 C10015                                                               
+    300008 C10016                                                               
+    300008 C10017                                                               
+
+ WORKER_ID SERVIC                                                               
+---------- ------                                                               
+    300010 D10004                                                               
+    300010 D10005                                                               
+    300010 D10006                                                               
+    300010 D10007                                                               
+    300012 B10000                                                               
+    300012 B10001                                                               
+    300014 B10002                                                               
+    300014 B10003                                                               
+    300016 D10004                                                               
+    300016 D10005                                                               
+    300018 D10006                                                               
+
+ WORKER_ID SERVIC                                                               
+---------- ------                                                               
+    300018 D10007                                                               
+    300020 B10000                                                               
+    300022 B10001                                                               
+    300024 B10002                                                               
+    300026 B10003                                                               
+    300028 B10000                                                               
+    300030 B10001                                                               
+    300032 B10002                                                               
+    300034 B10003                                                               
+    300036 B10000                                                               
+
+43 rows selected.
+
+
+ WORKER_ID PET_MAY_HA                                                           
+---------- ----------                                                           
+    300020 cat                                                                  
+    300020 dog                                                                  
+    300022 dog                                                                  
+    300024 cat                                                                  
+    300026 cat                                                                  
+    300026 dog                                                                  
+    300028 cat                                                                  
+    300028 dog                                                                  
+    300030 dog                                                                  
+    300032 cat                                                                  
+    300034 cat                                                                  
+
+ WORKER_ID PET_MAY_HA                                                           
+---------- ----------                                                           
+    300034 dog                                                                  
+    300036 cat                                                                  
+    300036 dog                                                                  
+
+14 rows selected.
+
+
+ WORKER_ID                                                                      
+----------                                                                      
+    300020                                                                      
+    300022                                                                      
+    300024                                                                      
+    300026                                                                      
+    300028                                                                      
+    300030                                                                      
+    300032                                                                      
+    300034                                                                      
+    300036                                                                      
+
+9 rows selected.
+
+
+ WORKER_ID EMAIL                                                                
+---------- --------------------------------------------------                   
+    300000 dmcknight@lcpetboarding.net                                          
+    300002 kgoddard@lcpetboarding.net                                           
+    300004 dvillanueva@lcpetboarding.net                                        
+    300006 msosa@lcpetboarding.net                                              
+    300008 fpaine@lcpetboarding.net                                             
+    300010 tgrey@lcpetboarding.net                                              
+    300012 jgale@lcpetboarding.net                                              
+    300014 jfinley@lcpetboarding.net                                            
+    300016 acole@lcpetboarding.net                                              
+    300018 smillar@lcpetboarding.net                                            
+    300020 kara.kelley@webmail.aa                                               
+
+ WORKER_ID EMAIL                                                                
+---------- --------------------------------------------------                   
+    300020 kkelley@coldmail.net                                                 
+    300022 blaineh@webmail.aa                                                   
+    300024 saara.thorne3@webmail.aa                                             
+    300024 sthorne@csumed.edu                                                   
+    300026 zaydenpowell@webmail.aa                                              
+    300028 alexisli@coldmail.net                                                
+    300030 me@lorendaniel.com                                                   
+    300032 stan_wicks@webmail.aa                                                
+    300034 prish44@webmail.aa                                                   
+    300034 prisha.mills@csumed.edu                                              
+    300036 hneedham@webmail.aa                                                  
+
+ WORKER_ID EMAIL                                                                
+---------- --------------------------------------------------                   
+    300036 look@allthosechickens.qw                                             
+
+23 rows selected.
+
+
+ WORKER_ID PHONE_NUMB                                                           
+---------- ----------                                                           
+    300000 3175550148                                                           
+    300002 3175550152                                                           
+    300002 3175550158                                                           
+    300004 3175550162                                                           
+    300006 3175550113                                                           
+    300006 3175550145                                                           
+    300006 3175550148                                                           
+    300008 6015550190                                                           
+    300010 6015550186                                                           
+    300012 6015550169                                                           
+    300014 6015550161                                                           
+
+ WORKER_ID PHONE_NUMB                                                           
+---------- ----------                                                           
+    300016 6015550168                                                           
+    300018 6015550115                                                           
+    300018 9045550128                                                           
+    300020 9045550118                                                           
+    300022 9045550174                                                           
+    300024 9045550114                                                           
+    300024 9045550132                                                           
+    300026 9045550188                                                           
+    300028 5735550115                                                           
+    300030 5735550107                                                           
+    300032 5735550169                                                           
+
+ WORKER_ID PHONE_NUMB                                                           
+---------- ----------                                                           
+    300034 5735550182                                                           
+    300036 5735550156                                                           
+
+24 rows selected.
+
+
+ WORKER_ID WORKER_TYPE          FIRST_NAME           LAST_NAME                  
+---------- -------------------- -------------------- --------------------       
+    300000 employee             Dua                  Mcknight                   
+    300002 employee             Konrad               Goddard                    
+    300004 employee             Daphne               Villanueva                 
+    300006 employee             Marian               Sosa                       
+    300008 employee             Fannie               Paine                      
+    300010 employee             Tala                 Grey                       
+    300012 employee             Jovan                Gale                       
+    300014 employee             Josef                Finley                     
+    300016 employee             Aubree               Cole                       
+    300018 employee             Scott                Millar                     
+    300020 volunteer            Kara                 Kelley                     
+
+ WORKER_ID WORKER_TYPE          FIRST_NAME           LAST_NAME                  
+---------- -------------------- -------------------- --------------------       
+    300022 volunteer            Blaine               Henderson                  
+    300024 volunteer            Saara                Thorne                     
+    300026 volunteer            Zayden               Powell                     
+    300028 volunteer            Alexis               Li                         
+    300030 volunteer            Loren                Daniel                     
+    300032 volunteer            Stanislaw            Wicks                      
+    300034 volunteer            Prisha               Mills                      
+    300036 volunteer            Hall                 Needham                    
+
+19 rows selected.
+
+
+Rollback complete.
+

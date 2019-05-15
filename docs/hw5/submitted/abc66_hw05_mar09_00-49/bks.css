@@ -1,0 +1,68 @@
+/*  Alex Childers
+	Last modified: 2019/03/09
+*/
+
+/* Rules are listed in the order in which they appear in the document,
+	which generally happens to be ordered from more to less specific.
+*/
+
+/* color theme:
+	grain 
+		original: #d7cec7 
+		lighter: #dfd7d2
+	blackboard #565656
+	oxblood #76323f
+	tan #c09f80
+*/
+
+/* importing fonts */
+@import url(https://fonts.googleapis.com/css?family=Nosifer); 
+@import url(https://fonts.googleapis.com/css?family=Cutive);
+
+body
+{
+	background-color: #F7F5F3;
+	font-family: Cutive, serif; 
+	padding-top: 5em; 
+}
+
+p
+{
+	margin: 2em; 
+}
+
+h1
+{
+	background-color: #76323f;
+	color: white; 
+	font-weight: bolder; 
+	font-family: Nosifer, cursive;
+	left: 0; 
+	margin: 0; 
+	padding: 0.5em;
+	position: fixed; 
+	right: 0; 
+	top: 0;
+	width: 100%; 
+}
+
+form
+{
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 80%; 
+}
+
+fieldset
+{
+	padding: 1em; 
+	margin: 1em; 
+}
+
+legend
+{
+	background-color: #76323f;
+	border: 0.1em solid black; 
+	color: white;
+	padding: 0.3em; 
+}

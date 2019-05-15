@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!--
+    by: Alex Childers
+    last modified: 2019/02/24
+
+    you can run this using the URL: 
+	http://nrs-projects.humboldt.edu/~abc66/cs328/hw4/hw4-form-play.html
+
+-->
+
+<head>
+    <title> HW 4 Problem 4 </title>
+    <meta charset="utf-8" />
+
+    <link href="http://nrs-projects.humboldt.edu/~st10/styles/normalize.css"
+          type="text/css" rel="stylesheet" />
+		  
+	<link href="hw4-css-play.css" type="text/css" rel="stylesheet" />
+	
+</head>
+
+<body>
+	<p>
+		Alex Childers <br />
+		CS 328
+	</p>
+	
+	<h1>
+		Homework 4, Problem 4
+	</h1>
+	
+	<form action="https://www.youtube.com/watch?v=dQw4w9WgXcQ" method="post">
+		<fieldset>
+			<legend> The Basics </legend>
+			
+			<label> Name: 
+				<input type="text" name="name" required="required" 
+					placeholder="Firstname Lastname"/>
+			</label>
+			
+			<label> Age: <input type="number" name="age" min="0" />
+			</label>
+			<br />
+			
+			<!-- drop-down boxes: appends name=value for each option 
+				selected -->
+			<label> Which college of HSU are you primarily involved in? 
+				<select name="college_dept">
+					<option value="CAHSS"> 
+						College of Arts, Humanities, and Social Sciences
+					</option>
+					<option value="CNRS" selected="selected" > 
+						College of Natural Resources and Sciences
+					</option>
+					<option value="CPS">
+						College of Professional Studies
+					</option>
+					<option value="GENS">
+						General Studies
+					</option>
+				</select>
+			</label>
+		</fieldset>
+		
+		<fieldset>
+			<legend> Preferences </legend>
+				<!-- NOTE: The color form inputs may not work in all browsers.
+					I found that they work in Firefox and Chrome, but not in
+					Internet Explorer. -->
+					
+				<!-- colors: append name=%23[hexcode] to the end of the action
+					URL (e.g: fave_color=%23ff0000), where %23 stands in for 
+					"#" -->
+				<fieldset>
+					<legend> Choose some colors. </legend>
+					
+					<label> What is your favorite color?
+						<input type="color" name="fave_color" /> 
+					</label> <br />
+					
+					<label> What is your second favorite color?
+						<input type="color" name="second_fave_color" />
+					</label> <br />
+					
+					<label> What is your least favorite color?
+						<input type="color" name="least_fav_color" />
+					</label> <br />
+				</fieldset>
+			
+			<!-- checkboxes: append name=on to the end of the action URL only
+				for the names of each checkbox that has been clicked -->
+			<fieldset>
+				<legend> 
+					Which of the following flavors have you tried? 
+				</legend>
+				
+				<label>
+					<input type="checkbox" name="chocolate" /> Chocolate
+				</label>
+				<br />
+				
+				<label>
+					<input type="checkbox" name="vanilla" /> Vanilla
+				</label>
+				<br />
+				
+				<label>
+					<input type="checkbox" name="strawberry" /> Strawberry
+				</label>
+				<br />
+				
+				<label>
+					<input type="checkbox" name="asphalt" /> Asphalt
+				</label>
+				<br />
+				
+				<label>
+					<input type="checkbox" name="chalk" /> Chalk
+				</label>
+				<br />
+			</fieldset>
+			
+			<!-- radio buttons: appends name=value to the end of the action URL
+				for the one radio button that was selected-->
+			<fieldset>
+				<legend>
+					Which flavor is your favorite?
+				</legend>
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="choc" 
+						checked="checked" /> 
+					Chocolate
+				</label>
+				<br />
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="vanl" /> 
+					Vanilla
+				</label>
+				<br />
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="strb" /> 
+					Strawberry
+				</label>
+				<br />
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="asph" /> 
+					Asphalt
+				</label>
+				<br />
+				
+				<label>
+					<input type="radio" name="fave_flavor" value="chlk" /> 
+					Chalk
+				</label>
+				<br />
+			</fieldset>
+			
+			<fieldset>
+				<legend> Express yourself </legend>
+				
+				<label> Do you have a poem you can share about your 
+					favorite flavor?
+					
+					<!-- according to the textbook, indentation causes the
+					resulting whitespace to become part of the textarea
+					content. how annoying -->
+					<textarea name="poem" rows="8" cols="30">
+Write an ode to your favorite flavor, if you feel so inclined.
+</textarea>
+				</label>
+			</fieldset>
+
+		</fieldset>
+		
+		<fieldset>
+			<legend> Done? </legend>
+			<input type="submit" name="submit_form" value="Yes, submit." />
+			<input type="reset"  value="No, reset this form." />
+		</fieldset>
+	</form>
+
+    <hr />
+
+    <p>
+        Validate by pasting .xhtml copy's URL into<br />
+        <a href="https://html5.validator.nu/">
+            https://html5.validator.nu/
+        </a>
+    </p>
+
+    <p>
+        <a href=
+           "http://jigsaw.w3.org/css-validator/check/referer?profile=css3">
+            <img src="http://jigsaw.w3.org/css-validator/images/vcss"
+                 alt="Valid CSS3!" height="31" width="88" />
+        </a>
+    </p>
+
+</body>
+</html>
+

@@ -1,0 +1,33 @@
+Alex Childers
+Last modified: 2019/04/28
+
+* Take-away #1: Methods for neutralizing potentially dangerous single quotes
+  while allowing valid uses of single quotes exist, but are hard to manually
+  program. Thus, you should use a pre-made method provided by the language
+  you're using to interface with the database. 
+* Why I chose this: Before reading this, I knew that there was a way to 
+  escape single quotes in Oracle's implementation of SQL, but I couldn't
+  fully picture all the potential uses of single quotes, malicious or not. 
+  It's nice to know that I'm not the only person who has difficulty picturing
+  such uses, so a function for parsing input including single quotes likely
+  already exists. (A brief Google search doesn't yield anything robust for 
+  Oracle or PHP, but I'll keep looking.) 
+
+* Take-away #2: Configuring error reporting is important to enforce security.
+* Why I chose this: Last semester, we briefly discussed the ability to grant 
+  and revoke access to certain tables and table-related operations for various
+  users, although we never practiced it. I think that this may tie into who gets
+  to see error reports-- while they're useful for me to debug, as the
+  programmer, I haven't been sharing my code with many people, so I hadn't 
+  considered what error messages would look like to other potentially 
+  knowledgable people. I'd like to learn how to adjust error messages in my 
+  apps, and on which tiers this needs to occur-- client, application, or data.  
+
+* Take-away #3: Using stored procedures to access the database can help 
+  prevent SQL injection.
+* Why I chose this: In this class, we've discussed using stored procedures to 
+  help enforce application logic/business rules, but I didn't think fully about
+  the security aspect of that. This approach to mitigating SQL injection stuck 
+  with me because I know how to create stored procedures, and as a result I 
+  know that I can confidently consider using stored procedures to enforce
+  security going forward. 

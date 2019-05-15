@@ -1,0 +1,177 @@
+/* Alex Childers
+   CS 328 - Homework 2 - Problems 2-4
+   Last modified: 2019/02/08
+*/
+
+set serveroutput on
+
+spool 328hw2-out.txt
+
+prompt Alex Childers
+prompt
+prompt =========
+prompt problem 2
+prompt =========
+
+/* Procedure: silly_shout
+	Expects 2 parameters: a desired message and how many times it should be
+	"shouted" to the screen. Returns nothing. 
+   	
+	This procedure prints an all-uppercase version of the desired message
+	to the screen that many times, once per line, and with '!!!' at the end
+	of each message. 
+
+	If the number of times to shout is less than 0, the procedure will 
+	print a message stating that it cannot show the message that many times.
+*/
+
+create or replace procedure silly_shout(desired_msg varchar2, 
+	times_to_shout integer) as
+	
+	loop_ctr integer; 
+begin
+	loop_ctr := 1; 
+
+	if times_to_shout < 0 then
+	  	dbms_output.put_line('You can''t shout "' || desired_msg || 
+			'" ' || times_to_shout || ' times.'); 
+	else
+		for loop_ctr in 1 .. times_to_shout
+		loop
+			dbms_output.put_line(upper(desired_msg) || '!!!'); 
+		end loop;
+	end if; 
+end;
+/
+show errors
+
+-- Testing procedure silly_shout. 
+
+prompt This should shout JUST DO IT!!! 3 times:
+prompt ==========================================
+
+exec silly_shout('just do it', 3)
+
+prompt This should shout nothing at all:
+prompt ========================================================================
+
+exec silly_shout('radio silence', 0)
+
+prompt This should print a message stating that the desired message can't be
+prompt printed:
+prompt =====================================================================
+
+exec silly_shout('Cannot Print Me', -3)
+
+start silly_shout_test.sql
+
+prompt =========
+prompt problem 3
+prompt =========
+
+/* Function: title_total_cost
+	Expects a title's ISBN. Returns the total cost of all of the current
+	quantity-on-hand for that title, or returns -1 if there is no title 
+	with that ISBN.
+*/
+
+create or replace function title_total_cost(given_isbn title.isbn%type) 
+	return title.title_cost%type as
+
+	total_cost title.title_cost%type;
+	isbn_rows integer;
+begin
+	-- Is there a title with this ISBN?
+	select 	count(*)
+	into 	isbn_rows
+	from	title
+	where	isbn = given_isbn;
+
+	if isbn_rows = 0 then
+		return -1; 
+	end if;  
+
+	/* If we get here, that means there is a title with this ISBN.
+		Calculate accordingly.
+	*/
+
+	select 	title_cost * qty_on_hand
+	into	total_cost
+	from	title
+	where	isbn = given_isbn; 
+
+	return total_cost; 
+end; 
+/
+show errors
+
+-- Testing the title_total_cost function
+
+prompt
+prompt This should show that ISBN 0805322272 has a total cost of 461.25:
+prompt =================================================================
+
+var full_title_cost number
+exec :full_title_cost := title_total_cost('0805322272')
+print full_title_cost
+
+prompt This should show that nonexistent ISBN 1234567890 has a 
+prompt total cost of -1:
+prompt =======================================================
+
+exec :full_title_cost := title_total_cost('1234567890')
+print full_title_cost
+
+start title_total_cost_test.sql
+
+prompt =========
+prompt problem 4
+prompt =========
+
+/* Procedure: titles_in_range
+	Expects 2 parameters: the desired low end and the desired high end of
+	a price range. Returns nothing.
+
+	For all titles whose title price falls within the given price range
+	(this range includes the values given), this procedure prints the 
+	title's price, name, and quantity on hand, ordered by title price 
+	(low to high) and thereunder by title name. 
+*/
+
+create or replace procedure titles_in_range(low_end number, high_end number) as
+begin
+	for next_title in (select   *
+			   from     title
+			   where    title_price >= low_end
+				    and title_price <= high_end
+			   order by title_price, title_name)
+	loop
+		dbms_output.put_line('$' || next_title.title_price || '-'
+			|| next_title.title_name || '-' || 
+			next_title.qty_on_hand); 
+	end loop; 
+end;
+/
+show errors
+
+prompt This should show all titles with prices between 25 and 35:
+prompt $28.95-Management Information Sy-30
+prompt $28.95-SPSS-75
+prompt $29.95-BASIC: A Structured Approach-5
+prompt $31.5-Financial Accounting-10
+prompt $34.95-Computers and Data Processing-15
+prompt ==========================================================
+
+exec titles_in_range(25, 35)
+
+prompt This should show all titles with prices between 55 and 75:
+prompt $55-Business Data Communications-3
+prompt $55-Creating Effective Software-2
+prompt $75-Simulation Modeling and Analysis-10
+prompt ==========================================================
+
+exec titles_in_range(55, 75)
+
+start titles_in_range_test.sql
+
+spool off

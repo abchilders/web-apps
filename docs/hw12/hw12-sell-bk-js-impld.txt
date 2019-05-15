@@ -1,0 +1,13 @@
+Alex Childers
+Last modified: 2019/05/11
+
+I attempted to implement form validation for Stage 2 of my sell_book function:
+refusing to allow form submission if the sale quantity exceeded the quantity
+on hand for that ISBN, showing an informative error message.
+
+If successful, the JavaScript would have dynamically queried the quantity 
+on hand for the selected ISBN, then refused to allow form submission if the 
+user-inputted quantity was greater than that queried quantity on hand. 
+However, I was unable to debug the XML query needed for this JavaScript
+to function before the deadline. The code that I did write for XML querying
+and the accompanying JavaScript have both been submitted.

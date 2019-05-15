@@ -1,0 +1,32 @@
+Alex Childers
+Last modified: 2019/01/30
+
+===============================================================================
+Write each of the relations in the bookstore database in relation-structure 
+form.
+===============================================================================
+
+publisher(PUB_ID, pub_name, pub_city, pub_state, order_min, over_min_disc);
+
+title(ISBN, pub_id, title_name, author, title_cost, title_price, qty_on_hand,
+	order_point, auto_order_qty, on_order)
+	foreign key (pub_id) references publisher
+
+order_needed(ORD_NEEDED_ID, isbn, order_qty, date_created, date_placed)
+	foreign key (isbn) references title 
+
+order_summary(ORDER_NUM, pub_id, date_placed, date_complete)
+	foreign key (pub_id) references publisher
+
+order_line_item(ORDER_NUM, ORD_LINE_NUM, isbn, order_qty, qty_rcvd_todt)
+	foreign key (order_num) references order_summary,
+	foreign key (isbn) references title 
+
+order_receipt(ORD_RECEIPT_NUM, order_num, ord_line_num, qty_rcvd, date_rcvd,
+	date_posted)
+	foreign key (order num, ord_line_num) references order_line_item
+
+return(RETURN_NUM, pub_id, order_num, isbn, return_qty, date_returned)
+	foreign key (pub_id) references publisher,
+	foreign key (order_num) references order_summary,
+	foreign key (isbn) references title 
